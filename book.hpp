@@ -21,7 +21,7 @@ public:
     bool is_borrowed() const override;
     void borrow() override;
     void return_material() override;
-    Material* create() const override;
+    //Material* create() const override;
 
 private:
     std::string m_author;

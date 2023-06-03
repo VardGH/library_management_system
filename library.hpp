@@ -18,5 +18,5 @@ public:
     Material* find_material_by_title(const std::string& title) const; // Find materials by title
 
 private:
-    std::vector<Material*> materials;
+    std::vector<Material*> m_materials;
 };

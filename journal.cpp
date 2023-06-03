@@ -82,7 +82,7 @@ void Journal::return_material()
     m_borrowed = false;
 }
 
-Material* Journal::create() const  
+/*Material* Journal::create() const  
 {
     return new Journal(*this);
-}
+}*/

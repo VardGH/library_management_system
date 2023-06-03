@@ -23,6 +23,8 @@ void test_library()
     // Borrow and return materials
     library.borrow_material(book1);
     library.borrow_material(dvd2);
+    std::cout << "Dune in library: " << (library.has_material(book1) ? "Yes" : "No") << std::endl;
+    
     library.return_material(book1);
     library.return_material(dvd1);
 
@@ -44,5 +46,4 @@ void test_library()
     library.remove_material(dvd2);
 
     // Clean up remaining materials
-    delete journal2;
 }

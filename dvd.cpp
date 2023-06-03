@@ -76,7 +76,7 @@ void DVD::return_material()
     m_borrowed = false;
 }
 
-Material* DVD::create() const 
+/*Material* DVD::create() const 
 {
     return new DVD(*this);
-}
+}*/

@@ -3,41 +3,35 @@
 
 Library::~Library() 
 {
-    for (auto elem : materials) {
+    for (auto elem : m_materials) {
         delete elem;
     }
 }
 
 void Library::add_material(Material* material)
 {
-    materials.push_back(material->create());
+    m_materials.push_back(material);
 }
 
 void Library::remove_material(Material* material)
 {
-    for (auto it = materials.begin(); it != materials.end(); ++it) {
+    for (auto it = m_materials.begin(); it != m_materials.end(); ++it) {
         if (*it == material) {
             delete *it;
-            materials.erase(it);
+            *it = nullptr;
             break;
         }
     }
-    delete material;  // Delete the material object passed as the argument
 }
 
 bool Library::has_material(Material* material) const 
 {
-    for (const Material* m : materials) {
-        if (m == material) {
-            return true;
-        }
-    }
-    return false;
+    return !(material->is_borrowed());
 }
 
 Material* Library::find_material_by_title(const std::string& title) const 
 {
-    for (Material* material : materials) {
+    for (Material* material : m_materials) {
         if (material->get_title() == title) {
             return material;
         }

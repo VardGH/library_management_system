@@ -82,7 +82,7 @@ void Book::return_material()
     m_borrowed = false;
 }
 
-Material* Book::create() const 
+/*Material* Book::create() const 
 {
     return new Book(*this);
-}
+}*/
